@@ -15,30 +15,28 @@ router.get('/funds/:id', (req, res) => {
 
 router.post('/funds', (req, res) => {
   const newFund = db.funds.insert({
-    "title": req.body.title,
-    "subtitle": req.body.subtitle,
-    "author": req.body.author,
-    "published": req.body.published,
-    "publisher": req.body.publisher,
-    "pages": req.body.pages,
-    "description": req.body.description,
-    "website": req.body.website,
-    "inCart": false
+    "manager": req.body.manager,
+    "name": req.body.name,
+    "birthdate": req.body.birthdate,
+    "balance": req.body.balance,
+    "interest": req.body.interest,
+    "term": req.body.term,
+    "tax": req.body.tax,
+    "fees": req.body.fees
   })
   res.json(newFund)
 })
 
 router.put('/funds/:id', (req, res) => {
   const updatedFund = db.funds.findByIdAndUpdate(req.params.id, {
-    "title": req.body.title,
-    "subtitle": req.body.subtitle,
-    "author": req.body.author,
-    "published": req.body.published,
-    "publisher": req.body.publisher,
-    "pages": req.body.pages,
-    "description": req.body.description,
-    "website": req.body.website,
-    "inCart": false
+    "manager": req.body.manager,
+    "name": req.body.name,
+    "birthdate": req.body.birthdate,
+    "balance": req.body.balance,
+    "interest": req.body.interest,
+    "term": req.body.term,
+    "tax": req.body.tax,
+    "fees": req.body.fees
   })
   res.json(updatedBook)
 })
